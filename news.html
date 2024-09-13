@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hackfood - News</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="./styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Nerko+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <style>
+
+        body::before {
+            content: none;
+        }
+
+        .section-title {
+            margin-top: 0;
+
+            padding-top: 0px;
+        }
+
+        .news-container {
+
+            margin-top: 0px;
+
+        }
+
+        .news-item {
+
+            display: flex;
+
+            background-color: white;
+
+            color: black;
+
+            margin-bottom: 20px;
+
+            padding: 20px;
+
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+        }
+        .news-item img {
+
+            width: 150px;
+            height: 150px;
+
+            object-fit: cover;
+
+            border-radius: 10px;
+
+            margin-right: 20px;
+        }
+
+        .news-content {
+
+            display: flex;
+            flex-direction: column;
+
+            justify-content: space-between;
+        }
+
+        .news-title {
+
+            font-size: 1.5rem;
+
+            font-weight: bold;
+        }
+
+        .news-meta {
+            font-size: 0.9rem;
+
+            color: #f0ad4e;
+        }
+        .news-meta span {
+            display: block;
+
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+
+        <div class="container-fluid">
+            <a class="navbar-brand" href="home.html" id="judul">Hackfood</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+
+                        <a class="nav-link" href="home.html">HOME</a>
+
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="news.html">NEWS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="food.html">FOOD</a>
+
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="wishlist.html">WISHLIST</a>
+                    </li>
+
+                </ul>
+
+                <form class="d-flex me-2" role="search">
+
+                    <input class="form-control me-2 rounded-search" type="search" placeholder="Search" aria-label="Search">
+
+                    <button class="btn btn-outline-success rounded-search" type="submit">Search</button>
+                </form>
+
+            </div>
+        </div>
+
+    </nav>
+
+
+    <div class="container news-container">
+        <h2 class="section-title" id="welcome-text">Berita Terkini</h2>
+
+        <div class="news-item">
+            <img src="https://picsum.photos/150/150?random=1" alt="News Image">
+            <div class="news-content">
+
+                <div class="news-meta">
+                    <span>FOOD NEWS</span>
+
+                    <span>11/09/2024, 18:31 WIB</span>
+                </div>
+                <div class="news-title">Tips Menghilangkan Bau Bawang di Tangan dengan Cepat</div>
+
+            </div>
+
+        </div>
+        <div class="news-item">
+            <img src="https://picsum.photos/150/150?random=2" alt="News Image">
+            <div class="news-content">
+
+                <div class="news-meta">
+                    <span>FOOD NEWS</span>
+
+                    <span>11/09/2024, 17:31 WIB</span>
+                </div>
+
+                <div class="news-title">6 Cara Buang Minyak Goreng Bekas yang Benar, Awas Bikin Mampet Saluran</div>
+
+            </div>
+        </div>
+
+        <div class="news-item">
+            <img src="https://picsum.photos/150/150?random=3" alt="News Image">
+
+            <div class="news-content">
+
+                <div class="news-meta">
+                    <span>FOOD NEWS</span>
+
+                    <span>11/09/2024, 17:11 WIB</span>
+                </div>
+                <div class="news-title">Sari Murni Group Luncurkan Frubee, Minuman Serbuk Rasa Buah dengan Pemanis Madu</div>
+            </div>
+
+        </div>
+
+        <div class="news-item">
+            <img src="https://picsum.photos/150/150?random=4" alt="News Image">
+            <div class="news-content">
+                <div class="news-meta">
+                    <span>FOOD NEWS</span>
+                    <span>11/09/2024, 16:31 WIB</span>
+                </div>
+                <div class="news-title">Cara Membuat Roti Tanpa Oven yang Mudah dan Enak</div>
+            </div>
+        </div>
+        <div class="news-item">
+            <img src="https://picsum.photos/150/150?random=5" alt="News Image">
+            <div class="news-content">
+                <div class="news-meta">
+                    <span>FOOD NEWS</span>
+                    <span>11/09/2024, 15:31 WIB</span>
+                </div>
+                <div class="news-title">Resep Smoothie Sehat untuk Sarapan Pagi</div>
+            </div>
+        </div>
+        <div class="news-item">
+            <img src="https://picsum.photos/150/150?random=6" alt="News Image">
+            <div class="news-content">
+                <div class="news-meta">
+                    <span>FOOD NEWS</span>
+                    <span>11/09/2024, 14:31 WIB</span>
+                </div>
+                <div class="news-title">Manfaat Minum Air Lemon di Pagi Hari</div>
+            </div>
+        </div>
+        <div class="news-item">
+            <img src="https://picsum.photos/150/150?random=7" alt="News Image">
+            <div class="news-content">
+                <div class="news-meta">
+                    <span>FOOD NEWS</span>
+                    <span>11/09/2024, 13:31 WIB</span>
+                </div>
+                <div class="news-title">Tips Memilih Buah yang Segar dan Manis</div>
+            </div>
+        </div>
+        <div class="news-item">
+            <img src="https://picsum.photos/150/150?random=8" alt="News Image">
+            <div class="news-content">
+                <div class="news-meta">
+                    <span>FOOD NEWS</span>
+                    <span>11/09/2024, 12:31 WIB</span>
+                </div>
+                <div class="news-title">Cara Membuat Jus Buah yang Segar dan Sehat</div>
+            </div>
+        </div>
+        <div class="news-item">
+            <img src="https://picsum.photos/150/150?random=9" alt="News Image">
+            <div class="news-content">
+                <div class="news-meta">
+                    <span>FOOD NEWS</span>
+                    <span>11/09/2024, 11:31 WIB</span>
+                </div>
+                <div class="news-title">Resep Salad Buah yang Segar dan Menyehatkan</div>
+            </div>
+        </div>
+        <div class="news-item">
+            <img src="https://picsum.photos/150/150?random=10" alt="News Image">
+            <div class="news-content">
+                <div class="news-meta">
+                    <span>FOOD NEWS</span>
+                    <span>11/09/2024, 10:31 WIB</span>
+                </div>
+                <div class="news-title">Manfaat Konsumsi Sayuran Hijau Setiap Hari</div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="search-results"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script src="./index.js"></script>
+</body>
+</html>

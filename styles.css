@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+    /* overflow-y: hidden; */ /* Hapus atau komentar properti ini */
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url(https://www.housedigest.com/img/gallery/4-simple-ways-to-create-extra-counter-space-in-your-kitchen/l-intro-1662256022.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: blur(3px);
+    z-index: -1;
+}
+
+.nav-bar {
+    overflow: hidden;
+}
+
+.nav-bar a {
+    float: right;
+    color: black;
+    text-align: center;
+    margin-right: 12px;
+    padding: 24px;
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+}
+
+.nav-bar a:hover {
+    background-color: rgb(238, 238, 238);
+    color: black;
+    border-radius: 8px;
+}
+
+.section-title {
+    background-size: 100%;
+    margin: 5rem;
+    font-size: 2.5rem;
+    text-align: center;
+    color: white;
+    padding-top: 80px;
+}
+
+.service {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.services__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    padding-bottom: 10%;
+    gap: 20px;
+}
+
+.services__card {
+    margin: 10px;
+    height: auto;
+    width: 100%;
+    max-width: 350px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #787878;
+    background-color: #fff;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out, transform 0.4s ease-in;
+    padding-bottom: 10%;
+}
+
+.services__img {
+    display: flex;
+    justify-content: center;
+    margin: 20px auto;
+    padding: auto;
+    border-radius: 50%;
+    width: 222px;
+    height: 222px;
+    object-fit: cover;
+}
+
+.services__card h2 {
+    text-align: center;
+    margin: 14px;
+}
+
+.services__card p {
+    text-align: center;
+    margin: 12px;
+    font-size: 18px;
+}
+
+.services__card button:hover {
+    cursor: pointer;
+}
+
+.services__card:hover {
+    transform: scale(1.075);
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1300px) {
+    .services__wrapper {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .services__wrapper {
+        grid-template-columns: 1fr;
+    }
+}
+
+#judul {
+    color: orange;
+    font-weight: 800;
+    font-size: 32px;
+    font-family: "Nerko One", cursive;
+}
+
+.nav-link {
+    font-weight: bold;
+    color: black !important;
+}
+
+.navbar {
+    border-bottom: 1px solid #ddd;
+    padding-left: 20px;
+    padding-right: 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.rounded-search {
+    border-radius: 50px;
+}
+
+.btn-outline-success {
+    color: black;
+    border-color: black;
+}
+
+.btn-outline-success:hover {
+    background-color: black;
+    color: white;
+}
+
+.fade {
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+.card-custom {
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.card-custom img {
+    border-radius: 15px;
+    padding: 10px;
+    object-fit: cover;
+    width: 100%; 
+    height: 350px; 
+}
+
+.search-results {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    max-height: 300px;
+    overflow-y: auto;
+    background-color: white;
+    border: 1px solid #ddd;
+    z-index: 1000;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: none;
+}
+
+.search-result-item {
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.search-result-item:hover {
+    background-color: #f0f0f0;
+}
