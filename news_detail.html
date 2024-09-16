@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hackfood - News Detail</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nerko+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+</head>
+<body class="news-detail">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="home.html" id="judul">Hackfood</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="home.html">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="news.html">NEWS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="food.html">FOOD</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="wishlist.html">WISHLIST</a>
+                    </li>
+                </ul>
+                <form class="d-flex me-2" role="search">
+                    <input class="form-control me-2 rounded-search" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success rounded-search" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5 pt-5">
+        <h2 class="section-title" id="news-title">News Title</h2>
+        <div class="news-meta" id="news-meta">News Meta</div>
+        <img id="news-image" src="" alt="News Image" class="img-fluid my-3">
+        <p id="news-content">News Content</p>
+
+        <div class="comments-section mt-5">
+            <h3>Comments</h3>
+            <div id="comments-list">
+                <!-- Comments will be dynamically added here -->
+            </div>
+            <form id="comment-form" class="mt-3 mb-5">
+                <div class="mb-3">
+                    <label for="commenter-name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="commenter-name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="comment-text" class="form-label">Comment</label>
+                    <textarea class="form-control" id="comment-text" rows="3" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const newsId = urlParams.get('id');
+            const newsData = {
+                1: {
+                    title: "Tips Menghilangkan Bau Bawang di Tangan dengan Cepat",
+                    meta: "FOOD NEWS | 11/09/2024, 18:31 WIB",
+                    image: "https://picsum.photos/600/400?random=1",
+                    content: "Bawang adalah bahan yang sering digunakan dalam masakan, namun baunya yang menyengat bisa tertinggal di tangan. Berikut adalah beberapa tips untuk menghilangkan bau bawang di tangan dengan cepat: \n\n1. Gunakan garam: Gosokkan garam pada tangan yang basah, lalu bilas dengan air. \n2. Gunakan stainless steel: Gosokkan tangan pada permukaan stainless steel, seperti sendok atau keran, di bawah air mengalir. \n3. Gunakan lemon: Gosokkan irisan lemon pada tangan, lalu bilas dengan air. \n4. Gunakan baking soda: Campurkan baking soda dengan sedikit air hingga membentuk pasta, lalu gosokkan pada tangan dan bilas dengan air."
+                },
+                2: {
+                    title: "6 Cara Buang Minyak Goreng Bekas yang Benar, Awas Bikin Mampet Saluran",
+                    meta: "FOOD NEWS | 11/09/2024, 17:31 WIB",
+                    image: "https://picsum.photos/600/400?random=2",
+                    content: "Minyak goreng bekas seringkali menjadi masalah dalam pembuangan. Berikut adalah 6 cara membuang minyak goreng bekas yang benar agar tidak menyumbat saluran: \n\n1. Dinginkan minyak terlebih dahulu. \n2. Tuangkan minyak ke dalam wadah yang bisa ditutup rapat. \n3. Buang minyak ke tempat sampah, bukan ke saluran pembuangan. \n4. Gunakan minyak bekas untuk membuat sabun. \n5. Bawa minyak bekas ke pusat daur ulang. \n6. Gunakan kertas atau kain untuk menyerap minyak sebelum mencuci peralatan masak."
+                },
+                3: {
+                    title: "Sari Murni Group Luncurkan Frubee, Minuman Serbuk Rasa Buah dengan Pemanis Madu",
+                    meta: "FOOD NEWS | 11/09/2024, 17:11 WIB",
+                    image: "https://picsum.photos/600/400?random=3",
+                    content: "Sari Murni Group baru saja meluncurkan produk terbaru mereka, Frubee, minuman serbuk rasa buah dengan pemanis madu. Frubee hadir dalam berbagai varian rasa buah yang segar dan alami, serta menggunakan madu sebagai pemanis alami yang lebih sehat dibandingkan gula. Produk ini diharapkan dapat menjadi pilihan minuman sehat bagi masyarakat yang peduli dengan kesehatan."
+                },
+                4: {
+                    title: "Cara Membuat Roti Tanpa Oven yang Mudah dan Enak",
+                    meta: "FOOD NEWS | 11/09/2024, 16:31 WIB",
+                    image: "https://picsum.photos/600/400?random=4",
+                    content: "Membuat roti tanpa oven ternyata bisa dilakukan dengan mudah dan hasilnya tetap enak. Berikut adalah cara membuat roti tanpa oven: \n\n1. Campurkan bahan-bahan seperti tepung, ragi, gula, dan air hangat. \n2. Uleni adonan hingga kalis. \n3. Diamkan adonan hingga mengembang dua kali lipat. \n4. Bentuk adonan sesuai selera. \n5. Panaskan wajan anti lengket dengan api kecil. \n6. Panggang adonan di wajan hingga matang dan berwarna kecokelatan."
+                },
+                5: {
+                    title: "Resep Smoothie Sehat untuk Sarapan Pagi",
+                    meta: "FOOD NEWS | 11/09/2024, 15:31 WIB",
+                    image: "https://picsum.photos/600/400?random=5",
+                    content: "Smoothie adalah pilihan sarapan yang sehat dan praktis. Berikut adalah resep smoothie sehat untuk sarapan pagi: \n\n1. Siapkan bahan-bahan seperti buah-buahan segar, yogurt, dan madu. \n2. Masukkan semua bahan ke dalam blender. \n3. Blender hingga halus dan tercampur rata. \n4. Tuang smoothie ke dalam gelas dan siap dinikmati."
+                },
+                6: {
+                    title: "Manfaat Minum Air Lemon di Pagi Hari",
+                    meta: "FOOD NEWS | 11/09/2024, 14:31 WIB",
+                    image: "https://picsum.photos/600/400?random=6",
+                    content: "Minum air lemon di pagi hari memiliki banyak manfaat untuk kesehatan. Berikut adalah beberapa manfaat minum air lemon di pagi hari: \n\n1. Meningkatkan sistem kekebalan tubuh. \n2. Membantu pencernaan. \n3. Menjaga keseimbangan pH tubuh. \n4. Membantu detoksifikasi tubuh. \n5. Menjaga kesehatan kulit. \n6. Memberikan energi dan meningkatkan mood."
+                },
+                7: {
+                    title: "Tips Memilih Buah yang Segar dan Manis",
+                    meta: "FOOD NEWS | 11/09/2024, 13:31 WIB",
+                    image: "https://picsum.photos/600/400?random=7",
+                    content: "Memilih buah yang segar dan manis bisa menjadi tantangan. Berikut adalah beberapa tips untuk memilih buah yang segar dan manis: \n\n1. Perhatikan warna buah. \n2. Cium aroma buah. \n3. Periksa tekstur kulit buah. \n4. Pilih buah yang beratnya sesuai dengan ukurannya. \n5. Hindari buah yang memiliki bercak atau kerusakan."
+                },
+                8: {
+                    title: "Cara Membuat Jus Buah yang Segar dan Sehat",
+                    meta: "FOOD NEWS | 11/09/2024, 12:31 WIB",
+                    image: "https://picsum.photos/600/400?random=8",
+                    content: "Membuat jus buah yang segar dan sehat sangat mudah. Berikut adalah cara membuat jus buah yang segar dan sehat: \n\n1. Siapkan buah-buahan segar sesuai selera. \n2. Cuci bersih buah-buahan. \n3. Potong buah-buahan menjadi bagian yang lebih kecil. \n4. Masukkan buah-buahan ke dalam blender. \n5. Tambahkan air atau es batu sesuai selera. \n6. Blender hingga halus dan tercampur rata. \n7. Tuang jus ke dalam gelas dan siap dinikmati."
+                },
+                9: {
+                    title: "Resep Salad Buah yang Segar dan Menyehatkan",
+                    meta: "FOOD NEWS | 11/09/2024, 11:31 WIB",
+                    image: "https://picsum.photos/600/400?random=9",
+                    content: "Salad buah adalah pilihan makanan yang segar dan menyehatkan. Berikut adalah resep salad buah yang segar dan menyehatkan: \n\n1. Siapkan berbagai jenis buah-buahan segar. \n2. Cuci bersih dan potong buah-buahan sesuai selera. \n3. Campurkan buah-buahan dalam mangkuk besar. \n4. Tambahkan yogurt atau madu sebagai dressing. \n5. Aduk rata dan sajikan."
+                },
+                10: {
+                    title: "Manfaat Konsumsi Sayuran Hijau Setiap Hari",
+                    meta: "FOOD NEWS | 11/09/2024, 10:31 WIB",
+                    image: "https://picsum.photos/600/400?random=10",
+                    content: "Konsumsi sayuran hijau setiap hari memiliki banyak manfaat untuk kesehatan. Berikut adalah beberapa manfaat konsumsi sayuran hijau setiap hari: \n\n1. Menyediakan serat yang baik untuk pencernaan. \n2. Mengandung banyak vitamin dan mineral. \n3. Membantu menjaga berat badan ideal. \n4. Menurunkan risiko penyakit kronis. \n5. Meningkatkan kesehatan kulit."
+                }
+            };
+
+            const news = newsData[newsId];
+            if (news) {
+                document.getElementById('news-title').textContent = news.title;
+                document.getElementById('news-meta').textContent = news.meta;
+                document.getElementById('news-image').src = news.image;
+                document.getElementById('news-content').textContent = news.content;
+            }
+
+            const comments = JSON.parse(localStorage.getItem(`comments-${newsId}`)) || [];
+            const commentsList = document.getElementById('comments-list');
+
+            function renderComments() {
+                commentsList.innerHTML = '';
+                comments.forEach((comment, index) => {
+                    const commentDiv = document.createElement('div');
+                    commentDiv.classList.add('comment');
+                    commentDiv.innerHTML = `
+                        <div class="comment-header">
+                            <strong>${comment.name}</strong>
+                            <button class="btn btn-sm btn-link edit-comment" data-index="${index}">Edit</button>
+                        </div>
+                        <p>${comment.text}</p>
+                    `;
+                    commentsList.appendChild(commentDiv);
+                });
+            }
+
+            document.getElementById('comment-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                const name = document.getElementById('commenter-name').value;
+                const text = document.getElementById('comment-text').value;
+                comments.push({ name, text });
+                localStorage.setItem(`comments-${newsId}`, JSON.stringify(comments));
+                renderComments();
+                document.getElementById('comment-form').reset();
+            });
+
+            commentsList.addEventListener('click', function(event) {
+                if (event.target.classList.contains('edit-comment')) {
+                    const index = event.target.getAttribute('data-index');
+                    const comment = comments[index];
+                    document.getElementById('commenter-name').value = comment.name;
+                    document.getElementById('comment-text').value = comment.text;
+                    comments.splice(index, 1);
+                    localStorage.setItem(`comments-${newsId}`, JSON.stringify(comments));
+                    renderComments();
+                }
+            });
+
+            renderComments();
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./index.js"></script>
+</body>
+</html>
